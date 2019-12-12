@@ -44,9 +44,9 @@ unlink(tf)
 
 On the 18th October 2019, violent demonstrations erupted in Santiago de Chile. Demonstrations rapidly spread across several cities, and it has been the most extended period of protest since 1990, with extraordinary violence for the country's standards. 
 
-Perhaps in similar ways to  recent phenomena in other parts of the world, these reasons are somewhat baffling. The media and experts have long called Chile a success story. In the last thirty years, the country has moved from *poor* to *high income* and its citizens enjoy living standards above the continent's average. However, the story told by the discontent talks of a highly unequal country, where the majority of the population only gets poorer and the rich become even richer.
+Perhaps in similar ways to recent phenomena in other parts of the world, these reasons are somewhat baffling. The media and experts have long called Chile a success story. In the last thirty years, the country has moved from *poor* to *high income* and its citizens enjoy living standards above the continent's average. However, the story told by the discontent talks of a highly unequal country, where the majority of the population only gets poorer and the rich become even richer.
 
-Looking at the data of the **[World Income Inequality Database ](https://www.wider.unu.edu/project/wiid-world-income-inequality-database)** collated by the **United Nations University World Institute for Development Economics Research** (UNU-WIDER), the below lines try to explain the story. Please note the author is not a social scientist, economist, or related - just an engineer trying to make sense of the whole situation ...
+Looking at the data of the **[World Income Inequality Database ](https://www.wider.unu.edu/project/wiid-world-income-inequality-database)** collated by the **United Nations University World Institute for Development Economics Research** (UNU-WIDER), the below lines try to explain the story. Please note the author is not a social scientist, economist, or related - just an engineer attempting to make sense of the whole situation ...
 
 
 
@@ -131,9 +131,9 @@ plot_data  %>% hchart("scatter", hcaes(y = gini, x = gdp_ppp_pc,group=incomegrou
 ```
 
 
-From the above chart, it is quite clear that <font color="`r colours_1[which("Chile" == countries_1)]`">Chile's</font> index is higher than most of the other <font color="`r colours_3[which("High income" == income_list)]`"> high income countries</font>. However, this is far from unique and seems to be common of other countries in Latin America. It is also worth noticing although this higher value, Chile is not big outlier when looking the Gini index as a function of the income.
+From the above chart, it is quite clear that <font color="`r colours_1[which("Chile" == countries_1)]`">Chile's</font> index is higher than most of the other <font color="`r colours_3[which("High income" == income_list)]`"> high income countries</font>. However, this is far from unique and seems to be common of other countries in Latin America. It is also worth noticing although this higher value, Chile is not big outlier when looking at the Gini index as a function of the income.
 
-As all single statistical measurements, this is obviously a generalisation and although it gives an general idea, it perhaps does not reflect the complexity of the country. What does this mean exactly, in terms of relative and absolute income?
+As all single statistical measurements, this is obviously a generalisation and although it gives a general idea, it perhaps does not reflect the complexity of the country. What does this mean exactly, in terms of relative and absolute income?
 
 ## Narrowing down the inequality 
 
@@ -245,9 +245,9 @@ max_y <- max(max_values)+3
 plot_data %>%  hchart("coloredarea",hcaes(x = key, y = gdp_ppp, segmentColor = colour, color=country2),zoomType = "x")  %>% hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip) %>%  hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = "Country deciles ordered by GDP PPP"),opposite = FALSE,labels = list(enabled=FALSE)) %>% hc_yAxis(title = list(text = "Per Capita Income"), max=max_y,opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = "Income per decile compared", margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Dabase - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database") 
 ```
 
-## However, big progress taken place.
+## However, big progress has taken place.
 
-All the above points notwhitstanding, it is important to point that **<font color="`r colours_1[which("Chile" == countries_1)]`">Chile</font> has indeed progressed significantly in the last `r year2-year1` years**. Let's look at the evolution of the Gini coefficient and GDPP per capita, which seems to challenge the perception that growth has brought increased inequality
+All the above points notwithstanding, it is important to point that **<font color="`r colours_1[which("Chile" == countries_1)]`">Chile</font> has indeed progressed significantly in the last `r year2-year1` years**. Let's look at the evolution of the Gini coefficient and GDPP per capita, which seems to challenge the perception that growth has brought increased inequality
 
 
 ```{r gini_index_play,echo=FALSE}
