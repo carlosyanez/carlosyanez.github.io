@@ -44,7 +44,7 @@ unlink(tf)
 
 On the 18th October 2019, violent demonstrations erupted in Santiago de Chile. Demonstrations rapidly spread across several cities, and it has been the most extended period of protest since 1990, with extraordinary violence for the country's standards. 
 
-Perhaps in similar ways to recent phenomena in other parts of the world, these reasons are somewhat baffling. The media and experts have long called Chile a success story. In the last thirty years, the country has moved from *poor* to *high income* and its citizens enjoy living standards above the continent's average. However, the story told by the discontent talks of a highly unequal country, where the majority of the population only gets poorer and the rich become even richer.
+Perhaps in similar ways to recent phenomena in other parts of the world,reasons are somewhat baffling. The media and experts have long called Chile a success story. In the last thirty years, the country has moved from *poor* to *high income* and its citizens enjoy living standards above the continent's average. However, the story told by the discontent talks of a highly unequal country, where the majority of the population only gets poorer and the rich become even richer.
 
 Looking at the data of the **[World Income Inequality Database ](https://www.wider.unu.edu/project/wiid-world-income-inequality-database)** collated by the **United Nations University World Institute for Development Economics Research** (UNU-WIDER), the below lines try to explain the story. Please note the author is not a social scientist, economist, or related - just an engineer attempting to make sense of the whole situation ...
 
