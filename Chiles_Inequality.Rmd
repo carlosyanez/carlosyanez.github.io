@@ -200,7 +200,7 @@ hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = "Selected Countr
 
 As expected, this is consistent with the Gini index. Latin American countries show a higher concentration by the wealthiest ten percent. Proportionally speaking, it seems this difference with the *developed* nations is at the expense of all the other deciles but especially against the *lowest-earning* population groups. 
 
-Another way to look at this is to calculate the equivalent GDP PPP per capita for each decile and see how much bigger is the income of D10 compared to the rest. The below graphs represents this:
+Another way to look at this is to calculate the equivalent GDP PPP per capita for each decile and see how much bigger is the income of D10 compared to the rest. The below graph represents this:
 
 
 ```{r deciles_compared2,  echo=FALSE}
