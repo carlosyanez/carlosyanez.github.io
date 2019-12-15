@@ -113,9 +113,14 @@ To start, let's look at the most known measurement for inequality, the [Gini Coe
 
 ```{r gini_index,echo=FALSE}
 #create Tooltip
+
 x <- c("Country","Income Group", "GDP PPP per capita", "Gini index","Year Reported")
 y <-c("{point.country}","{point.incomegroup}", "{point.gdp_ppp_pc:d,.0f}", "{point.gini:.2f}","{point.year}")
 tltip <- tooltip_table(x, y)
+plot_title <- "GDP per capita and Gini Coefficient"
+x_label <- "GDP Per Capita (US 2011)"
+y_label <- "Gini Coefficient"
+
 
 
 plot_data <- comparison_base %>% filter(year_key %in% year_selector_1$year_key) %>% select(country,year,incomegroup,year_key,gini_reported,gdp_ppp_pc_usd2011) %>% group_by(country,year,incomegroup,year_key) %>% summarise(gini=mean(gini_reported),gdp_ppp_pc=mean(gdp_ppp_pc_usd2011)) %>% ungroup() %>% mutate(incomegroup2=ifelse(country=="Chile","Chile",incomegroup)) %>% arrange(-gdp_ppp_pc) 
@@ -125,7 +130,7 @@ countries_gini <- plot_data$country
 
 
 
-plot_data  %>% hchart("scatter", hcaes(y = gini, x = gdp_ppp_pc,group=incomegroup2)) %>% hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip) %>%  hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = "GDP Per Capita (US 2011)"),opposite = FALSE,labels = list(rotation=-90)) %>% hc_yAxis(title = list(text = "Gini Coefficient"), opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = "GDP per capita and Gini Coefficient", margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Database - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database")  %>% hc_colors(colours_3[match(sort(unique(plot_data$incomegroup2)),income_list)])
+plot_data  %>% hchart("scatter", hcaes(y = gini, x = gdp_ppp_pc,group=incomegroup2)) %>% hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip) %>%  hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = x_label),opposite = FALSE,labels = list(rotation=-90)) %>% hc_yAxis(title = list(text = y_label), opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = plot_title, margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Database - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database")  %>% hc_colors(colours_3[match(sort(unique(plot_data$incomegroup2)),income_list)])
 
 
 ```
@@ -145,6 +150,9 @@ For several countries, WIID provides the share of the pie for each income decile
 x <- c("Country","Income Group", "GDP PPP per capita for Decile","GDP PPP per capita Country", "Year Reported")
 y <-c("{point.country}","{point.incomegroup}", "{point.gdp_ppp:d,.0f}","{point.gdp_ppp_t:d,.0f}","{point.year}")
 tltip <- tooltip_table(x, y)
+plot_title <- "Share of National GDP per income decile"
+x_label <- "Country"
+y_label <- "Share of GDP (%)"
 
 plot_data <- comparison_dec %>% filter(year_key %in% year_selector_1$year_key) %>% select(country,year,incomegroup,year_key,decile,share) %>% group_by(country,year,incomegroup,year_key,decile) %>% summarise(share=mean(share)) %>% ungroup() %>% filter(country %in% countries_2) %>% spread(decile,share)
  
@@ -193,7 +201,7 @@ highchart() %>%
                 data = (plot_data$d10),
                 stack = "Share",
                 color = decile_colours$colour[10]) %>%
-hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = "Selected Country"),opposite = FALSE,labels = list(rotation=-90)) %>% hc_yAxis(title = list(text = "Share of GDP (%)") ,max=100, opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = "Share of National GDP per income decile", margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Database - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database") 
+hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = x_label),opposite = FALSE,labels = list(rotation=-90)) %>% hc_yAxis(title = list(text = y_label) ,max=100, opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = plot_title, margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Database - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database") 
 
 
 ```
@@ -209,6 +217,9 @@ options(digits=3)
 x <- c("Country", "Decile", "D10 Ratio","Year Reported")
 y <-c("{point.country}", "{point.decile}", "{point.ratio_D10:.2f}","{point.year}")
 tltip <- tooltip_table(x, y)
+plot_title <- "GDP per capita of highest earning decile  as ratio of other deciles"
+x_label <- "Country ordered by GDP PPP"
+y_label <- "D10 Ratio (D10/Dx)"
 
 
 plot_data <- comparison_dec %>% filter(year_key %in% year_selector_1$year_key) %>% group_by(country,year,decile,year_key) %>% summarise(share=mean(share), gdp_ppp=mean(gdp_ppp_pc_usd2011))  %>%  spread(decile,share) %>% mutate(d9=d10/d9,d8=d10/d8,d7=d10/d7,d6=d10/d6,d5=d10/d5,d4=d10/d4,d3=d10/d3,d2=d10/d2,d1=d10/d1)%>% ungroup() %>% select(-d10, -year_key) %>% gather("decile","ratio_D10",d1,d2,d3,d4,d5,d6,d7,d8,d9) %>% merge(x=.,y=country_colours_2,by="country",all.x=TRUE) %>% mutate(colour=ifelse(is.na(colour),other_country_colour,colour)) %>% arrange(gdp_ppp)  
@@ -218,7 +229,7 @@ plot_data <- comparison_dec %>% filter(year_key %in% year_selector_1$year_key) %
 max_values<-plot_data$ratio_D10[ !(plot_data$country=="Haiti")]
 max_y <- max(max_values)+3
 
-plot_data %>% hchart("scatter",hcaes(x =country, y = ratio_D10, color = colour)) %>% hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip) %>%  hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = "Country ordered by GDP PPP"),opposite = FALSE,labels = list(rotation=-90)) %>% hc_yAxis(title = list(text = "D10 Ratio (D10/Dx)"), max=max_y,opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = "GDP per capita of highest earning decile  as ratio of other deciles", margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Database - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database") 
+plot_data %>% hchart("scatter",hcaes(x =country, y = ratio_D10, color = colour)) %>% hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip) %>%  hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = x_label),opposite = FALSE,labels = list(rotation=-90)) %>% hc_yAxis(title = list(text = y_label), max=max_y,opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = plot_title, margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Database - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database") 
 ```
 
 
@@ -232,7 +243,9 @@ When looked in terms of GDP per capita, the consequence of this is that although
 x <- c("Country", "Decile", "Deecile's GDP PPP (per capita) ","Overall GDP PPP (per capita)")
 y <-c("{point.country}", "{point.decile}", "{point.gdp_ppp:d,.0f}","{point.overall_gdp_ppp:d,.0f}")
 tltip <- tooltip_table(x, y)
-
+plot_title <- "Income per decile compared"
+x_label <- "Country deciles ordered by GDP PPP"
+y_label <- "Per Capita Income"
 
 
 plot_data <- comparison_dec %>% filter(year_key %in% year_selector_1$year_key)   %>% group_by(country,year,decile,key) %>% summarise( gdp_ppp=mean(gdp_ppp), overall_gdp_ppp=mean(gdp_ppp_pc_usd2011)) %>% merge(x=.,y=country_colours_1,by="country",all.x=TRUE) %>% mutate(colour=ifelse(is.na(colour),other_country_colour,colour),country2=ifelse(colour==other_country_colour,"Other",country)) %>% arrange(gdp_ppp) 
@@ -240,9 +253,7 @@ plot_data <- comparison_dec %>% filter(year_key %in% year_selector_1$year_key)  
 max_values<-plot_data$gdp_ppp
 max_y <- max(max_values)+3
 
-
-  
-plot_data %>%  hchart("coloredarea",hcaes(x = key, y = gdp_ppp, segmentColor = colour, color=country2),zoomType = "x")  %>% hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip) %>%  hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = "Country deciles ordered by GDP PPP"),opposite = FALSE,labels = list(enabled=FALSE)) %>% hc_yAxis(title = list(text = "Per Capita Income"), max=max_y,opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = "Income per decile compared", margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Database - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database") 
+plot_data %>%  hchart("coloredarea",hcaes(x = key, y = gdp_ppp, segmentColor = colour, color=country2),zoomType = "x")  %>% hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip) %>%  hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = x_label),opposite = FALSE,labels = list(enabled=FALSE)) %>% hc_yAxis(title = list(text = y_label), max=max_y,opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = plot_title, margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Database - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database") 
 ```
 
 ## However, big progress has taken place.
@@ -255,12 +266,16 @@ All the above points notwithstanding, it is important to point that **<font colo
 x <- c("Country","Income Group", "GDP PPP per capita", "Gini index","Year Reported")
 y <-c("{point.country}","{point.incomegroup}", "{point.gdp_ppp_pc:d,.0f}", "{point.gini:.2f}","{point.year}")
 tltip <- tooltip_table(x, y)
+plot_title <- "Changes GDP per capita and Gini Coefficient"
+x_label <- "GDP per capita"
+y_label <- "Gini Coefficient"
+
 
 plot_data <- comparison_base %>% filter(country %in% countries_2) %>% select(country,year,incomegroup,year_key,gini_reported,gdp_ppp_pc_usd2011) %>% group_by(country,year,incomegroup,year_key) %>% summarise(gini=mean(gini_reported),gdp_ppp_pc=mean(gdp_ppp_pc_usd2011)) %>% ungroup() %>% arrange(-gdp_ppp_pc) %>% filter(!(country=="India"))
 
 
 
-plot_data  %>% hchart("scatter", hcaes(y = gini, x = gdp_ppp_pc,group=country)) %>% hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip) %>%  hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = "GDP per capita"),opposite = FALSE,labels = list(rotation=-90)) %>% hc_yAxis(title = list(text = "Gini Coefficient"), opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = "Changes GDP per capita and Gini Coefficient", margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Database - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database") %>% hc_colors(colours_2[match(sort(unique(plot_data$country)),countries_2)])
+plot_data  %>% hchart("scatter", hcaes(y = gini, x = gdp_ppp_pc,group=country)) %>% hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip) %>%  hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = x_label),opposite = FALSE,labels = list(rotation=-90)) %>% hc_yAxis(title = list(text = y_label), opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = plot_title, margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Database - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database")  %>%  hc_colors(colours_2[match(sort(unique(plot_data$country)),countries_2)])
 ```
 
 The data suggests:
@@ -276,12 +291,15 @@ When breaking Chile's decile data, it is clear that **improvement has been made 
 x <- c("Country", "Decile", "D10 Ratio","Year Reported")
 y <-c("{point.country}", "{point.decile}", "{point.ratio_D10:.2f}","{point.year}")
 tltip <- tooltip_table(x, y)
+plot_title <- "D10 Ratio (D10/Dx)"
+x_label <- "Year"
+y_label <- "D10 Ratio (D10/Dx)"
 
 
 plot_data <-  comparison_dec %>% select(country,year,decile,share) %>% group_by(country,year,decile) %>% summarise(share=mean(share))  %>%  spread(decile,share) %>% mutate(d9=d10/d9,d8=d10/d8,d7=d10/d7,d6=d10/d6,d5=d10/d5,d4=d10/d4,d3=d10/d3,d2=d10/d2,d1=d10/d1)%>% ungroup() %>% select(-d10) %>% gather("decile","ratio_D10",d1,d2,d3,d4,d5,d6,d7,d8,d9) %>% merge(x=.,y=decile_colours,by="decile",all.x=TRUE) %>% mutate(colour=ifelse(is.na(colour),other_country_colour,colour)) %>% arrange(-year,decile) 
 
 chosen_country<-"Chile"
-plot_data  %>% filter(country==chosen_country, year %in% 1990:2020) %>% hchart("line",hcaes(x =year, y = ratio_D10, group=decile, color = colour)) %>% hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip) %>%  hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = "Year"),opposite = FALSE,labels = list(rotation=-90)) %>% hc_yAxis(title = list(text = "D10 Ratio (D10/Dx)"), opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = paste("D10 Ratio (D10/Dx)",chosen_country,sep=" - "), margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Database - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database") 
+plot_data  %>% filter(country==chosen_country, year %in% 1990:2020) %>% hchart("line",hcaes(x =year, y = ratio_D10, group=decile, color = colour)) %>% hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip) %>%  hc_exporting( enabled = TRUE) %>%  hc_xAxis(title = list(text = x_label),opposite = FALSE,labels = list(rotation=-90)) %>% hc_yAxis(title = list(text = y_label), opposite = FALSE, minorTickInterval = "auto", minorGridLineDashStyle = "LongDashDotDot",showFirstLabel = FALSE,showLastLabel = FALSE, plotBands = list(list(from = 25, to = JS("Infinity"), color = "rgba(100, 0, 0, 0.1)"))) %>% hc_title(text = paste(plot_title,chosen_country,sep=" - "), margin = 20, align = "left",style = list(color = "#808080", useHTML = TRUE)) %>%  hc_credits(enabled = TRUE,  text = "Source: World Income Inequality Database - UNU-WIDER",href = "https://www.wider.unu.edu/project/wiid-world-income-inequality-database") 
 
 ```
 
