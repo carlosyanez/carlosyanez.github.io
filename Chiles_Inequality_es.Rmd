@@ -393,7 +393,7 @@ Reconociendo que ha habido un avance sustantivo, Chile necesita tomar medidas pa
 5. Este artículo ha sido creado con RStudio, utilizando [Highcharts](https://www.highcharts.com/) y [KableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/ awesome_table_in_html.html).
 6. Highcharts se utiliza bajo una licencia no comercial (Creative Commons Attribution-NonCommercial 3.0). Todos los derechos reservados.
 6. El autor no se hace responsable de cómo se utilizan estos datos. ¡No crea en todo lo que lee en la Internet! Se ha proporcionado el enlace a los datos de origen, por lo que puede verificar si he cometido errores.
-7. Archivo R Notebook disponible [aquí](https://github.com/carlosyanez/carlosyanez.github.io/blob/master/Chiles_Inequality.Rmd)
+7. Archivo R Notebook disponible [aquí](https://github.com/carlosyanez/carlosyanez.github.io/blob/master/Chiles_Inequality_es.Rmd)
 
 ```{r cleanup,include=FALSE}
 #cleanup all objects, except data downloaded from WIID
