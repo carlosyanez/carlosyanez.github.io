@@ -1,6 +1,7 @@
 # carlosyanez.github.io
  Data Analysis - Web version 
  
-* [Inequality in Chile](https://carlosyanez.github.io/Chiles_Inequality.html)
-* [Desigualdad en Chile](https://carlosyanez.github.io/Chiles_Inequality_es.html)
-* [Plebsicito](https://carlosyanez.github.io/plebiscito_plot.html)
+* [Inequality in Chile](Chiles_Inequality.html)
+* [Desigualdad en Chile](Chiles_Inequality_es.html)
+* [Plebsicito](plebiscito_plot.html)
+* [Netflix Categories](netflix_categories.html)
