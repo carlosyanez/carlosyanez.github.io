@@ -1,0 +1,243 @@
+---
+title: "Carlos Yáñez Santibáñez"
+subtitle: "Projects <br/> <small>(press 'o' for tile view, 'f' for full screen)</small>"  
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css,custom.css]
+    lib_dir: lib
+    nature:
+      titleSlideClass: "my-title"
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  fig.show = TRUE,
+  hiline = TRUE
+)
+
+
+if(!require(librarian)) install.packages("librarian")
+
+librarian::shelf("tidyverse",
+                 "xaringanthemer",
+                 "gadenbuie/xaringanExtra",
+                 "giocomai/ganttrify",
+                 "lubridate",
+                 "showtext",
+                 "sysfonts",
+                 "ggtext",
+                 "tinter",
+                 "flextable",
+                 "officer",
+                 "tidygraph","ggraph",
+                 "ropenscilabs/ochRe")
+
+xaringanExtra::use_fit_screen()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_tile_view()
+xaringanExtra::use_panelset()
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+
+text_font          <- "Open Sans"
+prim_colour <- "#222222"
+sec_colour <- "#1b0694"
+font_size <- 11
+
+style_duo_accent(
+  primary_color = prim_colour,
+  secondary_color = sec_colour,
+  inverse_header_color = "#FFFFFF",
+  header_font_google = google_font(text_font),
+  text_font_google   = google_font(text_font, "400", "400i", "600i", "700"),
+  code_font_google   = google_font("Fira Mono"),
+  title_slide_background_image="img/background.jpg",
+  title_slide_text_color="white",
+  header_h1_font_size = "2.25rem",
+)
+
+folder <-"https://carlosyanez.github.io/portfolio"
+
+```
+
+# aussiemaps <img src="https://github.com/carlosyanez/aussiemaps/raw/master/img/hexSticker.png" width = "10%" height = "10%" align="right" />
+
+.left-text[
+.just-text[
+Package that provides Australian LGA, suburbs and Postal Area maps directly in R, without any need to download and process shapefiles.
+
+* [Package page](https://carlosyanez.github.io/)
+
+**Technology/Tools** : R, sf
+
+]
+]
+.right-plot[
+<img src="https://github.com/carlosyanez/aussiemaps/raw/master/img/map2.png" alt="drawing"  class="center" style="width:80%;"/>
+
+
+
+]
+---
+# Mock Presentation – Bicycle Maintenance
+.left-text[
+.just-text[
+Analysis of bicycle utilisation in a big metropolitan area. Presentation created for MOOC (Strategic Business Analytics Specialization, by ESSEC Business School on Coursera).
+
+* [Report](https://github.com/carlosyanez/Bicycle-Maintenance/blob/master/Bike_Maintenance.pdf)
+* [Code](https://github.com/carlosyanez/Bicycle-Maintenance)
+
+**Technology/Tools** : R Markdown , converted to PowerPoint presentation
+
+]
+]
+.right-plot[
+<img src="`r str_c(folder,"img/","Bike_Maintenance-1024x575.png")`" alt="drawing"  class="center" style="width:110%;"/>
+]
+
+---
+# (Yet Another) Movie Recommendation Engine
+.left-text[
+.just-text[
+Refinement of movie recommendation engine. Done as part of Data Science Professional Certificate MOOC (HarvardX on edX). Data sourced from movielens dataset.
+
+* [Report](https://github.com/carlosyanez/Movielens-10-M-Recommendation/blob/master/Movielens_Recommender_Report.pdf)
+* [Code](https://github.com/carlosyanez/Movielens-10-M-Recommendation)
+
+**Technology/Tools** : R, caret package
+
+]
+]
+.right-plot[
+<img src="`r str_c(folder,"img/","Recommendation-Engine-1024x506.png")`" alt="drawing"  class="center" style="width:110%;"/>
+]
+
+---
+# Tweet Classification – Catastrophe or Not?
+.left-text[
+.just-text[
+Simple machine learning model used to predict whether a particular tweet is related to a disaster/catastrophic event. Data set source here. Report created for Data Science Professional Certificate MOOC (HarvardX on edX).
+
+* [Report](https://github.com/carlosyanez/Tweets_Catastrophe_Classification/blob/master/Twitter_Classifier.pdf)
+* [Coded](https://github.com/carlosyanez/Tweets_Catastrophe_Classification)
+
+**Technology/Tools** : 	R , caret package
+]
+
+]
+.right-plot[
+<img src="`r str_c(folder,"img/","Twitter-Classifier-1024x632.png")`" alt="drawing"  class="center" style="width:110%;"/>
+]
+---
+# PM Dashboard with Shiny
+.left-text[
+.just-text[
+Proof of concept at building a simple reporting dashboard for a PM/PMO handling multiple projects, allowing both a “synoptic” for reporting and a deep dive for day-to-day project management.
+Application built to gather project data from Trello or Excel spreadsheets.]
+
+* [Demo](https://carlosyanezs.shinyapps.io/PMDashboard/)
+* [Code](https://github.com/carlosyanez/pm-dashboard)
+
+
+**Technology/Tools** : R Shiny,semantic dashboard,flexdashbaord, plumber, docker
+]
+
+.right-plot[
+<img src="`r str_c(folder,"img/","pm_dashboardpng-1024x483.png")`" alt="drawing"  class="center" style="width:110%;"/>
+]
+
+
+---
+# Shiny Dashboard – Covid Tracker (Austria)
+.left-text[
+.just-text[
+Dashboard to track daily covid cases reported in Austria. Dashboard allows to filter by date and federal state. Includes charts tracking active cases, new infections, testing stats and hospital utilisation.
+Additionally an R script was developed to download and prepare the data.
+
+* [Dashboard](https://carlosyanezs.shinyapps.io/Covid_in_Austria/)
+* [Code](https://github.com/carlosyanez/Covid-Austria-Tracker-Code)
+
+**Technology/Tools** : R Shiny, flexdashboard, plotly for R.
+
+]
+]
+.right-plot[
+<img src="`r str_c(folder,"img/","Covid_Tracker_Shiny-1024x515.png")`" alt="drawing"  class="center" style="width:110%;"/>
+]
+
+---
+# Service Desk Dashboard with Tableau
+.left-text[
+Sample service desk daily dashboard, created with Tableau Public.
+
+* [Dashboard](https://public.tableau.com/profile/carlos.y.ez.santib.ez#!/vizhome/ServiceDeskDashboard_16061702442780/TicketTracking)
+* [R Code](https://github.com/carlosyanez/Snippets/tree/main/Incident_Log)
+
+**Technology/Tools** : Tools/Technology	Tableau Public, R (data load)
+
+
+]
+.right-plot[
+<img src="`r str_c(folder,"img/","Service-Desk-Dashboard-Tableau-1024x533.png")`" alt="drawing"  class="center" style="width:110%;"/>
+]
+
+---
+# Service Desk Dashboard with PowerBI
+.left-text[
+.just-text[
+Sample service desk daily dashboard, created with Power BI.
+
+* [Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMmU5ODlkZWMtZDcwMi00OTM1LTlhZmEtZmEzOTdhNzZjODQxIiwidCI6IjQyZDhhYmJhLTMzYTAtNDU1NS05NWY3LWU5YmE1YzZjYzFkNyIsImMiOjl9)
+
+
+**Technology/Tools** : Power BI
+
+]
+]
+.right-plot[
+<img src="`r str_c(folder,"img/","Service-Desk-Dashboard-PowerBI-1024x555.png")`" alt="drawing"  class="center" style="width:110%;"/>
+]
+---
+# Visualisations (Tweets)
+
+Charts usually shared on .emp-italic[[Twitter](https://twitter.com/carlosyanez)].
+
+.panelset[
+.panel[.panel-name[1]
+.column-third[ ![](https://github.com/carlosyanez/Snippets/raw/main/tidytuesday/2021-04-20/netflix_categories.png)]
+.column-third[ ![](https://github.com/carlosyanez/Snippets/raw/main/barbecues/barbeques.png)
+]
+.column-third[ ![](https://github.com/carlosyanez/Snippets/raw/main/tidytuesday/2021-04-06/deforestation.png) ]
+]
+.panel[.panel-name[2]
+.column-third[ ![](https://github.com/carlosyanez/Snippets/raw/main/tidytuesday/2021-04-13/post_office_route66.png)]
+.column-third[ ![](https://github.com/carlosyanez/Snippets/raw/main/micf_venues/micf_venues.png)
+]
+.column-third[ ![](https://github.com/carlosyanez/Snippets/raw/main/Renewables/renewables.png)]
+]
+.panel[.panel-name[3]
+.column-third[ <img src=https://github.com/carlosyanez/Snippets/raw/main/bushfires_au2020_eu/bushfires2020.png  width="60%" align="center"/>]
+.column-third[ ![](https://github.com/carlosyanez/Snippets/raw/main/melbourne_trails/melbourne_trail.png)
+]
+.column-third[ <img src=https://github.com/carlosyanez/Snippets/raw/main/temp_rodelillo/max_temp_rodelillo.png  width="100%" align="center"/> ]
+]
+]
+
+
+
+
+
