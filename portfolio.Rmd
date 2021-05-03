@@ -70,7 +70,7 @@ style_duo_accent(
   header_h1_font_size = "2.25rem",
 )
 
-folder <-"https://carlosyanez.github.io/portfolio"
+folder <-"https://carlosyanez.github.io/"
 
 ```
 
@@ -80,7 +80,7 @@ folder <-"https://carlosyanez.github.io/portfolio"
 .just-text[
 Package that provides Australian LGA, suburbs and Postal Area maps directly in R, without any need to download and process shapefiles.
 
-* [Package page](https://carlosyanez.github.io/)
+* [Package page](https://carlosyanez.github.io/aussiemaps)
 
 **Technology/Tools** : R, sf
 
