@@ -165,18 +165,18 @@ Application built to gather project data from Trello or Excel spreadsheets.]
 
 .left-text[
 .just-text[
-Application 
+Application developed as assignment for Masters of Data Analytics at the University of Glasgow, displaying historical data for weather stations across the UK. Chart changes based on stations and variables selected. Dynamic MS Word report generated on-demand, based on selection. 
 
 
 * [Application](https://carlosyanezs.shinyapps.io/Weather_App_UoG/)
 * [Code](https://github.com/carlosyanez/UoG_R_Project)
 
 
-**Technology/Tools** : R Shiny, rmarkdown, officer, ggiraph
+**Technology/Tools** : R Shiny, rmarkdown, officer, ggiraph, leaflet
 ]
-
+]
 .right-plot[
-<img src="`r str_c(folder,"img/","uofg_weather_app.png")`" alt="drawing"  class="center" style="width:110%;"/>
+<img src="`r str_c(folder,"img/","uofg_weather_app.png")`" class="center" style="width:110%;"/>
 ]
 
 
