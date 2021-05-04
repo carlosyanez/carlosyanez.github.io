@@ -160,6 +160,25 @@ Application built to gather project data from Trello or Excel spreadsheets.]
 <img src="`r str_c(folder,"img/","pm_dashboardpng-1024x483.png")`" alt="drawing"  class="center" style="width:110%;"/>
 ]
 
+---
+# Historic UK Weather Report with Shiny
+
+.left-text[
+.just-text[
+Application 
+
+
+* [Application](https://carlosyanezs.shinyapps.io/Weather_App_UoG/)
+* [Code](https://github.com/carlosyanez/UoG_R_Project)
+
+
+**Technology/Tools** : R Shiny, rmarkdown, officer, ggiraph
+]
+
+.right-plot[
+<img src="`r str_c(folder,"img/","uofg_weather_app.png")`" alt="drawing"  class="center" style="width:110%;"/>
+]
+
 
 ---
 # Shiny Dashboard – Covid Tracker (Austria)
