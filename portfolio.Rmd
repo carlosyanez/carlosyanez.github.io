@@ -38,6 +38,7 @@ librarian::shelf("tidyverse",
                  "showtext",
                  "sysfonts",
                  "ggtext",
+                 "metathis",
                  "tinter",
                  "flextable",
                  "officer",
@@ -51,7 +52,7 @@ xaringanExtra::use_panelset()
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
-library(xaringanthemer)
+#library(xaringanthemer)
 
 text_font          <- "Open Sans"
 prim_colour <- "#222222"
@@ -72,7 +73,25 @@ style_duo_accent(
 
 folder <-"https://carlosyanez.github.io/"
 
+#metathis
+
+meta() %>%
+  meta_general(
+    description = "Project Portfolio Presentation - Carlos Yáñez Santibáñez",
+  ) %>% 
+  meta_social(
+    title = "Reproducible Data Workflows With Drake",
+    url = "https://www.carlosyanez.cl/projects/",
+    image = "https://carlosyanez.github.io/img/background.jpg",
+    image_alt = "Title Skid.",
+    og_type = "website",
+    og_author = "Carlos Yáñez Santibáñez",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@carlosyanez"
+  )
+
 ```
+
 
 # aussiemaps <img src="https://github.com/carlosyanez/aussiemaps/raw/master/img/hexSticker.png" width = "10%" height = "10%" align="right" />
 
