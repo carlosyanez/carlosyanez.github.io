@@ -80,7 +80,7 @@ meta() %>%
     description = "Project Portfolio Presentation - Carlos Yáñez Santibáñez",
   ) %>% 
   meta_social(
-    title = "Reproducible Data Workflows With Drake",
+    title = "Project Portfolio Presentation - Carlos Yáñez Santibáñez",
     url = "https://www.carlosyanez.cl/projects/",
     image = "https://carlosyanez.github.io/img/background.jpg",
     image_alt = "Title Skid.",
