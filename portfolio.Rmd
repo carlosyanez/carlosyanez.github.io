@@ -118,7 +118,7 @@ Package that provides Australian LGA, suburbs and Postal Area maps directly in R
 Analysis of bicycle utilisation in a big metropolitan area. Presentation created for MOOC (Strategic Business Analytics Specialization, by ESSEC Business School on Coursera).
 
 * [Report](https://github.com/carlosyanez/Bicycle-Maintenance/blob/master/Bike_Maintenance.pdf)
-* [Code](https://github.com/carlosyanez/Bicycle-Maintenance)
+* [Code](https://github.com/carlosyanez/edx_bicycle_maintenance)
 
 **Technology/Tools** : R Markdown , converted to PowerPoint presentation
 
@@ -134,8 +134,8 @@ Analysis of bicycle utilisation in a big metropolitan area. Presentation created
 .just-text[
 Refinement of movie recommendation engine. Done as part of Data Science Professional Certificate MOOC (HarvardX on edX). Data sourced from movielens dataset.
 
-* [Report](https://github.com/carlosyanez/Movielens-10-M-Recommendation/blob/master/Movielens_Recommender_Report.pdf)
-* [Code](https://github.com/carlosyanez/Movielens-10-M-Recommendation)
+* [Report]https://github.com/carlosyanez/DS_Cert_Movielens-10-M-Recommendation/blob/master/Movielens_Recommender_Report.pdf)
+* [Code](https://github.com/carlosyanez/DS_Cert_Movielens-10-M-Recommendation)
 
 **Technology/Tools** : R, caret package
 
@@ -151,8 +151,8 @@ Refinement of movie recommendation engine. Done as part of Data Science Professi
 .just-text[
 Simple machine learning model used to predict whether a particular tweet is related to a disaster/catastrophic event. Data set source here. Report created for Data Science Professional Certificate MOOC (HarvardX on edX).
 
-* [Report](https://github.com/carlosyanez/Tweets_Catastrophe_Classification/blob/master/Twitter_Classifier.pdf)
-* [Coded](https://github.com/carlosyanez/Tweets_Catastrophe_Classification)
+* [Report](https://github.com/carlosyanez/DS_Cert_Tweets_Catastrophe_Classification/blob/master/Twitter_Classifier.pdf)
+* [Coded](https://github.com/carlosyanez/DS_Cert_Tweets_Catastrophe_Classification)
 
 **Technology/Tools** : 	R , caret package
 ]
@@ -188,7 +188,7 @@ Application developed as assignment for Masters of Data Analytics at the Univers
 
 
 * [Application](https://carlosyanezs.shinyapps.io/Weather_App_UoG/)
-* [Code](https://github.com/carlosyanez/UoG_R_Project)
+* [Code](https://github.com/carlosyanez/MSc_DA_R_Project)
 
 
 **Technology/Tools** : R Shiny, rmarkdown, officer, ggiraph, leaflet
