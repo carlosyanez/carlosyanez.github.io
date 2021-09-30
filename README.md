@@ -14,7 +14,7 @@
 
 ## R Packages
 
-*[{aussiemaps}](aussiemaps/)
-*[{just.install}](just.install/)
-*[{uofgdataanalyticsreport}](uofgdataanalyticsreport/)
-*[{customthemes}](customthemes/)
+* [{aussiemaps}](aussiemaps/)
+* [{just.install}](just.install/)
+* [{uofgdataanalyticsreport}](uofgdataanalyticsreport/)
+* [{customthemes}](customthemes/)
