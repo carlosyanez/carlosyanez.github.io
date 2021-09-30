@@ -10,7 +10,7 @@
 * [Subnational HDI](subnational_hdi.html)
 * [Plebsicito](plebiscito_plot.html)
 * [Netflix Categories](netflix_categories.html)
-* [Nut free foods]()
+* [Nut free foods](nutfree/)
 
 ## R Packages
 
