@@ -1,6 +1,4 @@
-# carlosyanez.github.io
-
- visit [carlosyanez.cl](https://www.carlosyanez.cl)
+Visit [carlosyanez.cl](https://www.carlosyanez.cl)
 
 ## Data Analysis and Visualisation 
  
