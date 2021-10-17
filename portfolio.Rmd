@@ -5,6 +5,7 @@ output:
   xaringan::moon_reader:
     css: [xaringan-themer.css,custom.css]
     lib_dir: lib
+    chakra: libs/remark-latest.min.js
     nature:
       titleSlideClass: "my-title"
       slideNumberFormat: "%current%"
@@ -12,6 +13,7 @@ output:
       highlightLines: true
       ratio: 16:9
       countIncrementalSlides: true
+      beforeInit: "jsmacro/macro.js"
 ---
 
 ```{r setup, include=FALSE}
@@ -33,17 +35,12 @@ if(!require(librarian)) install.packages("librarian")
 librarian::shelf("tidyverse",
                  "xaringanthemer",
                  "gadenbuie/xaringanExtra",
-                 "giocomai/ganttrify",
                  "lubridate",
                  "showtext",
                  "sysfonts",
                  "ggtext",
                  "metathis",
-                 "tinter",
-                 "flextable",
-                 "officer",
-                 "tidygraph","ggraph",
-                 "ropenscilabs/ochRe")
+                 "tinter")
 
 xaringanExtra::use_fit_screen()
 xaringanExtra::use_tachyons()
@@ -92,24 +89,18 @@ meta() %>%
 
 ```
 
-
 # aussiemaps <img src="https://github.com/carlosyanez/aussiemaps/raw/master/img/hexSticker.png" width = "10%" height = "10%" align="right" />
 
-.left-text[
-.just-text[
+.left-text[.just-text[
 Package that provides Australian LGA, suburbs and Postal Area maps directly in R, without any need to download and process shapefiles.
 
 * [Package page](https://carlosyanez.github.io/aussiemaps)
 
 **Technology/Tools** : R, sf
 
-]
-]
+]]
 .right-plot[
-<img src="https://github.com/carlosyanez/aussiemaps/raw/master/img/map2.png" alt="drawing"  class="center" style="width:80%;"/>
-
-
-
+![:centerscale 80%](https://github.com/carlosyanez/aussiemaps/raw/master/img/map2.png)
 ]
 ---
 # Mock Presentation – Bicycle Maintenance
@@ -120,12 +111,12 @@ Analysis of bicycle utilisation in a big metropolitan area. Presentation created
 * [Report](https://github.com/carlosyanez/Bicycle-Maintenance/blob/master/Bike_Maintenance.pdf)
 * [Code](https://github.com/carlosyanez/edx_bicycle_maintenance)
 
-**Technology/Tools** : R Markdown , converted to PowerPoint presentation
+**Technology/Tools** : R Markdown , converted to Power Point presentation
 
 ]
 ]
 .right-plot[
-<img src="`r str_c(folder,"img/","Bike_Maintenance-1024x575.png")`" alt="drawing"  class="center" style="width:110%;"/>
+![:centerscale 110%](`r str_c(folder,"img/","Bike_Maintenance-1024x575.png")`)
 ]
 
 ---
@@ -142,7 +133,8 @@ Refinement of movie recommendation engine. Done as part of Data Science Professi
 ]
 ]
 .right-plot[
-<img src="`r str_c(folder,"img/","Recommendation-Engine-1024x506.png")`" alt="drawing"  class="center" style="width:110%;"/>
+![:centerscale 110%](`r str_c(folder,"img/","Recommendation-Engine-1024x506.png")`)
+
 ]
 
 ---
@@ -159,7 +151,8 @@ Simple machine learning model used to predict whether a particular tweet is rela
 
 ]
 .right-plot[
-<img src="`r str_c(folder,"img/","Twitter-Classifier-1024x632.png")`" alt="drawing"  class="center" style="width:110%;"/>
+![:centerscale 110%](`r str_c(folder,"img/","Twitter-Classifier-1024x632.png")`)
+
 ]
 ---
 # PM Dashboard with Shiny
