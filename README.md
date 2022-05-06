@@ -16,3 +16,7 @@ Visit [carlosyanez.cl](https://www.carlosyanez.cl)
 * [{just.install}](just.install/)
 * [{uofgdataanalyticsreport}](uofgdataanalyticsreport/)
 * [{customthemes}](customthemes/)
+
+
+## Other
+* [snpaform](snapform.html)
