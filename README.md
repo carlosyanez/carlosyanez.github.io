@@ -1,4 +1,4 @@
-Visit [carlosyanez.cl](https://www.carlosyanez.cl)
+Visit [carlosyanez.id.au](https://www.carlosyanez.id.au)/[carlosyanez.cl](https://www.carlosyanez.cl)
 
 ## Data Analysis and Visualisation 
  
@@ -18,5 +18,4 @@ Visit [carlosyanez.cl](https://www.carlosyanez.cl)
 * [{customthemes}](customthemes/)
 
 
-## Other
-* [snpaform](snapform.html)
+
