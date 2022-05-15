@@ -10,12 +10,17 @@ Visit [carlosyanez.id.au](https://www.carlosyanez.id.au)/[carlosyanez.cl](https:
 * [Netflix Categories](netflix_categories.html)
 * [Nut free foods](nutfree/)
 
+
 ## R Packages
 
 * [{aussiemaps}](aussiemaps/)
 * [{just.install}](just.install/)
 * [{uofgdataanalyticsreport}](uofgdataanalyticsreport/)
 * [{customthemes}](customthemes/)
+
+## Presentations
+
+*[Data Privacy](data_privacy_presentation.html)
 
 
 
