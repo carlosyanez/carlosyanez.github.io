@@ -20,7 +20,7 @@ Visit [carlosyanez.id.au](https://www.carlosyanez.id.au)/[carlosyanez.cl](https:
 
 ## Presentations
 
-*[Data Privacy](data_privacy_presentation.html)
+* [Data Privacy](data_privacy_presentation.html)
 
 
 
