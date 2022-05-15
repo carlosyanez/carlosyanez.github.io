@@ -1,0 +1,391 @@
+---
+title: ".orange[Big data analytics] <br/> and personal data protection"
+output:
+  xaringan::moon_reader:
+    css: ["xaringan-themer.css","ninjutsu"]
+    lib_dir: lib
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+class: split-20
+```{r setup, include=FALSE}
+
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+library(here)
+
+# knitr options ####
+
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  eval = TRUE,
+  include=TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  fig.show = TRUE,
+  hiline = TRUE
+)
+
+# number formatting 
+knitr::knit_hooks$set(inline = function(x) { if(!is.numeric(x)){ x }else{ customthemes::digits_formatter(x,sig_digits = 3) } })
+
+
+#default theming for plots ####
+
+base_theme <- customthemes::custom_plot_theme_md(google_font = "Roboto",background_colour = "white", 
+                              legend_pos = "botom",legend_dir = "horizontal") +
+              theme(legend.position = "bottom",
+                    plot.subtitle = ggtext::element_markdown()
+                    ) 
+
+
+theme_set(base_theme) 
+
+customthemes::set_plot_colours(line_colour ="#0085c7",
+                               fill_colour = tinter::lighten("#0085c7",0.5),
+                               HVline_colour ="grey90")
+
+
+
+xaringanExtra::use_fit_screen()
+xaringanExtra::use_tachyons()
+
+
+
+```
+
+
+
+.row[.split-15[
+.column[.content[ ]]
+.column[.content[##Introduction]]
+]]
+.row[.split-66[
+.column[.content[
+.split-15[
+.column[.content[ ]]
+.column[.content[
+.split-80[
+.column[.content.gray[
+Big data and **big data analytics**, mean news ways to process data, including personal data.
+
+This new ways may be **perceived** as non-compatible with Data Protection regulation such as (UK's) Data Protection Act (**DPA**) and the EU's General Data Protection Regulation (**GDPR**).
+
+This presentation discuss UK Information Commissioner's Office (**ICO**) paper on the matter, published in **September 2017**.
+
+]]
+.column[.content.center[
+
+<img src="img/analytics-svgrepo-com.svg" width="15%" height="15%">
+<img src="img/balance-svgrepo-com.svg" width="30%" height="30%">
+<img src="img/dpa_gdpr.jpg" width="15%" height="15%">
+]]
+]
+]]
+]
+
+
+]]
+.column[.content[
+<img src="img/ico_report.png" width="90%" height="90%">
+
+]
+]
+
+]]
+
+---
+
+class: split-20
+
+.row[.split-15[
+.column[.content[ ]]
+.column[.content[##Why Big Data Analytics is different]]
+]]
+.row[
+.split-two[
+.row[.split-two[
+.column.bg-washed-yellow[.content.gray[
+### .center.orange[Big Data]
+
+- Large **volumes** of data.
+- Data generated at **velocity**, i.e. real-time.
+- **Variety** of data sources, enabled by new tech (IoT, 5G).
+
+]]
+.column.bg-washed-red[.content.gray[
+### .center.orange.pr2[Big Data Analytics]
+
+- Use of algorithms to **learn from data** and **act with data**.
+- **Opacity** of the processing, due to the use of AI.
+- A tendency to collect and use all possible data (**n=all approach**).
+- **Re-purposing of data** in new and unexpected ways.
+- **Using of new types of data**, including observed and derived data.
+
+]]
+
+]]
+
+.row[.content.center[
+<br/>
+<br/>
+.f2.orange[Compliance with Data Protection Legislation is a **must**.]
+]]
+]]
+
+---
+
+class: split-20
+
+.row[.split-15[
+.column[.content[ ]]
+.column[.content[## Principles of Data Protection]]
+]]
+.row[.content.center[
+<img src="img/main.png" width="67%" height="67%">
+]]
+
+---
+
+layout: true
+class: split-three 
+
+.column.bg-washed-yellow[.content.gray[
+### .center[Fairness]
+<br/>
+<br/>
+* Processing of personal data must by **fair** and **lawful.**
+
+* Fairness doesn't necessarily mean individually unwelcome outcomes.
+
+* Fair processing should account be **transparent**, take into account and avoid its **effects** and meet the individuals **expectations**.
+
+<br/>
+<br/>
+.center[<img src="img/balance2-svgrepo-com.svg" width="40%" height="40%" class="filter-purple">]
+
+]]
+.column.bg-washed-red[.content.gray[
+### .center[Conditions for processing]
+<br/>
+<br/>
+* If processing of personal data requires **consent**, it needs to be freely given, specific, unambiguous and informed.
+
+* A **legitimate interest** is a necessary condition. This requires that an organisation needs to **balance** its interests against of the individuals.
+
+* A big data, 'n=all' approach context means a **higher effort** to establish legitimate interest.
+
+<br/>
+.center[<img src="img/checklist-svgrepo-com.svg" width="40%" height="40%" class="filter-purple">]
+]]
+.column.bg-washed-yellow[.content.gray.pr3[
+### .center[Purpose limitation]
+<br/>
+<br/>
+* The purpose for which the data is collected must ** explicitly specified.**
+
+* Further use must **not** be **incompatible** with the original purpose.
+
+* This prevent **arbitrary** re-use and requires active evaluation of purpose.
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+.center[<img src="img/border-all-svgrepo-com.svg" width="40%" height="40%" class="filter-purple">]
+]]
+]]
+
+---
+class: hide-col2 hide-col3 gray-col2 gray-col3 
+---
+count: false
+class: hide-col3 gray-col3 fade-col1
+---
+count: false
+class: fade-col1 fade-col2
+<!-- --- -->
+<!-- count: false -->
+
+---
+layout: true
+class: split-three white
+
+.column.bg-washed-yellow[.content.gray[
+### .center[Data collection and retention]
+<br/>
+* Organisations may have **incentives to retain** all collected data.
+* However, it shall **not be kept longer than necessary** for the purpose for which it is being processed.
+
+* Despite "big data advantages", good **retention policies** and **enforced deletion** are necessary.
+
+<br/>
+<br/>
+.center[<img src="img/hourglass-svgrepo-com.svg" width="40%" height="40%" class="filter-purple">]
+
+]]
+.column.bg-washed-red[.content.gray[
+### .center[Accuracy]
+<br/> 
+<br/>
+<br/>
+* Processed personal data must be **accurate** and **up-to-date**.
+
+* Although it perceived that big data analytics can deal with messy data, **obsolete data may lead to bias**.
+
+* Individuals have the **right to be correctly represented**.
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+.center[<img src="img/tick-svgrepo-com.svg" width="40%" height="40%" class="filter-purple">]
+
+]]
+.column.bg-washed-yellow[.content.gray.pr3[
+### .center[Rights of individuals]
+<br/>
+<br/>
+<br/>
+* Individuals have the right to **access any personal data**. This may a challenge for bid data controllers.
+
+* Individuals have also the right **not to be subject to completely automated decisions**.
+
+* Decision algorithms need to be **explainable**.
+
+<br/>
+<br/>
+.center[<img src="img/human-rights-svgrepo-com.svg" width="40%" height="40%" class="filter-purple">]
+
+]]
+
+---
+class: hide-col2 hide-col3 gray-col2 gray-col3 
+---
+count: false
+class: hide-col3 gray-col3 fade-col1
+---
+count: false
+class: fade-col1 fade-col2
+<!-- --- -->
+<!-- count: false -->
+
+---
+layout: true
+class: split-three white
+
+.column.bg-washed-yellow[.content.gray[
+### .center[Security]
+<br/>
+<br/>
+<br/>
+* Data processors and controllers need to be aware that **big data can create new security risks**. 
+
+* **Risk assessments** must address those new risks to achieve compliance.
+
+* Big data analytics can serve as a tool to assess and **mitigate IT risks**.
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+.center[<img src="img/security-svgrepo-com.svg" width="40%" height="40%" class="filter-purple">]
+]]
+.column.bg-washed-red[.content.gray[
+### .center[Accountability and governance]
+<br/>
+* **Organisations are accountable** for the outcomes of big data analytics.
+
+* This includes  potentially **discriminatory, erroneous and unjustified  decisions**.
+
+* Accountability extends **beyond what is explicitly** stated in the regulation.
+
+* Good governance, including **Data Quality** can help to address undesired effects.
+<br/>
+<br/>
+.center[<img src="img/organization-svgrepo-com.svg" width="40%" height="40%" class="filter-purple">]
+
+]]
+.column.bg-washed-yellow[.content.gray.pr3[
+### .center[Data controllers and processors]
+<br/>
+* Data protection regulation distinguishes between **data processors** and **data controllers**.
+
+* In a big data context, that **distinction can be difficult**.
+
+* **Careful consideration** of roles must be taken into account when outsourcing - to ensure compliance.
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+.center[<img src="img/people-svgrepo-com.svg" width="40%" height="40%" class="filter-purple">]
+
+]]
+
+---
+class: hide-col2 hide-col3 gray-col2 gray-col3 
+---
+count: false
+class: hide-col3 gray-col3 fade-col1
+---
+count: false
+class: fade-col1 fade-col2
+<!-- --- -->
+<!-- count: false -->
+---
+
+layout: false
+class: split-20
+
+.row[.split-15[
+.column[.content[ ]]
+.column[.content[## Conclusions]]
+]]
+.row[
+.f3.pr3.gray[
+* Big data analytics can bring **many benefits**.
+
+* Personal data protection is a **legal must**, no matter any perceived incompatibility with any big data analytics approach.
+
+* **Regulation is not an insurmountable barrier** for adoption of big data analytics.
+]
+
+]
+
+---
+
+class: center, inverse, middle,title-slide
+
+# .huge[Thanks]
+
+---
+
+class: split-20
+
+.row[.split-15[
+.column[.content[ ]]
+.column[.content[## Reference and Further Reading]]
+]]
+.row[
+.f3.pr3[
+* Information Commissioner’s Office (UK). **Big Data, Artificial Intelligence, Machine Learning and Data Protection**. Accessed 4 February 2022. <br> https://ico.org.uk/media/for-organisations/documents/2013559/big-data-ai-ml-and-data-protection.pdf.
+
+* The National Archives (UK). **Data Protection Act 1998**. Accessed 4 February 2022. <br>
+https://www.legislation.gov.uk/ukpga/1998/29/contents
+
+* European Commission. **Data Protection Website**. Accessed 4 February 2022. <br>
+https://ec.europa.eu/info/law/law-topic/data-protection_en
+]
+
+]
+
+
