@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tidytuesday on Carlos Yanez Santibanez</title>
+    <link>https://www.carlosyanez.id.au/tags/tidytuesday/</link>
+    <description>Recent content in tidytuesday on Carlos Yanez Santibanez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-au</language>
+    <lastBuildDate>Fri, 30 Apr 2021 09:33:49 +0000</lastBuildDate><atom:link href="https://www.carlosyanez.id.au/tags/tidytuesday/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What to watch on Netflix ?</title>
+      <link>https://www.carlosyanez.id.au/2021/04/data-analysis/what-to-watch-on-netflix/</link>
+      <pubDate>Fri, 30 Apr 2021 09:33:49 +0000</pubDate>
+      
+      <guid>https://www.carlosyanez.id.au/2021/04/data-analysis/what-to-watch-on-netflix/</guid>
+      <description>View full screen here.</description>
+    </item>
+    
+  </channel>
+</rss>

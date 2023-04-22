@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>leaflet on Carlos Yanez Santibanez</title>
+    <link>https://www.carlosyanez.id.au/tags/leaflet/</link>
+    <description>Recent content in leaflet on Carlos Yanez Santibanez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-au</language>
+    <lastBuildDate>Tue, 30 Jun 2020 09:22:34 +0000</lastBuildDate><atom:link href="https://www.carlosyanez.id.au/tags/leaflet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Locked down areas in Melbourne</title>
+      <link>https://www.carlosyanez.id.au/2020/06/data-analysis/locked-down-areas-in-melbourne/</link>
+      <pubDate>Tue, 30 Jun 2020 09:22:34 +0000</pubDate>
+      
+      <guid>https://www.carlosyanez.id.au/2020/06/data-analysis/locked-down-areas-in-melbourne/</guid>
+      <description>Updated on 4 July 2020: added postcodes 3031 and 3051.
+From midnight Wednesday, 10 Melbourne postcode areas will enter lockdown, to contain the spread of covid-19. As per the news report, the areas are 3012, 3021, 3032, 3038, 3042, 3046, 3047, 3055, 3060, 3064.
+Although my postcode is not listed, it is in one of previously mentioned hot spot LGAs. So, to better understand which are exactly the places in lock down, I put them in the above map.</description>
+    </item>
+    
+  </channel>
+</rss>
