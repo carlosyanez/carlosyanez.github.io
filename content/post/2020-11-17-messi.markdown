@@ -1,0 +1,136 @@
+---
+author: carlos
+date: 2020-11-17 21:46:38+00:00
+draft: false
+title: Messi
+type: post
+url: /2020/11/data-analysis/messi/
+categories:
+- Data Analysis
+language:
+- English
+tags:
+- plotly
+- python
+- soccer
+---
+
+
+
+
+Back in August, the [press informed](https://edition.cnn.com/2020/08/25/football/lionel-messi-barcelona-spt-intl/index.html) that [Lionel Messi](https://en.wikipedia.org/wiki/Lionel_Messi) wanted to leave [**FC Barcelona**](https://en.wikipedia.org/wiki/FC_Barcelona), the only team in his professional career. Barcelona was not ready to let him go without a fight, and eventually he was convinced (or his lawyers were convinced) he should stay for a least another season.
+
+
+
+
+Being one of the most relevant football player of his generation, he attracts a lot of business opportunities for Barcelona - so the financial reasons for trying him to stay are obvious. But in terms of the competition, how important is Messi for the team? The short answer seems to be **a lot**, and here we have some data to show it.
+
+
+
+
+
+
+
+
+
+
+Let's start looking at the most basic metric: does he score goals? Being a [forward](https://en.wikipedia.org/wiki/Forward_(association_football)), getting the ball past the opposing goalkeeper is an important part of the job. So, is Messi good at his? And how good? The chart below shows the goal ratio (goals per number of matches) for each season of professional playing. As a comparison, it also shows other [Ballon d'or](https://en.wikipedia.org/wiki/Forward_(association_football)) winners (the most prestigious accolade for players). The chart is a bit messy (_no pun intended_) - please use the filter options for comparison.
+
+
+
+
+
+
+
+
+<iframe src="/objects/messi_1.html" style="border:none;" width="90%" height="600"></iframe>
+
+
+
+
+
+It looks like that Messi has had so far a quite good run, with consistency only comparable to [Cristiano Ronaldo](https://en.wikipedia.org/wiki/Cristiano_Ronaldo) and [Alfredo Di Stéfano](https://en.wikipedia.org/wiki/Alfredo_Di_St%C3%A9fano). These three players stand out from the rest of the selection, with others fizzling out after a couple of seasons.
+
+
+
+
+Well, having a lot of goals per season is good. But how does that related to Barcelona winning matches? Let's have a look the team results when Messi was on the field. The below chart presents a summary per season.
+
+
+
+
+
+
+
+
+<iframe src="/objects/messi_2.html" style="border:none;" width="90%" height="600"></iframe>
+
+
+
+
+
+Then, the below charts presents the teams results split by Messi's contribution to the score.
+
+
+
+
+
+
+
+
+<iframe src="/objects/messi_3.html" style="border:none;" width="90%" height="600"></iframe>
+
+
+
+
+
+From the charts, it is clear there is a "Messi" factor - when he is on the field, Barcelona tends to obtain a good result and he is an active contributor towards that end! Most importantly,  this has been the case for over a decade and it does not seem his performance is going down. Looking at this, it is quite understandable why the club wanted to retain him!
+
+
+
+
+Having said that, Messi's presence on the field does not reflect equally across all competions where the club takes part. Win/Messi correlation seems to be stronger for the Spanish national League compared to Euopean championships.
+
+
+
+
+
+
+
+
+<iframe src="/objects/messi_4.html" style="border:none;" width="90%" height="600"></iframe>
+
+
+
+
+
+As expected, Spanish teams are the ones that most frequently find themselves on the receiving end of Messi's scoring. [SD Eibar](https://en.wikipedia.org/wiki/SD_Eibar) has "honour" of getting 20 goals in 11 matches, with teams like [Osasuna](), [Levante](), [Betis]() and [Rayo Vallecano]() also expecting to be beaten by him on every encounter!
+
+
+
+
+
+
+
+
+<iframe src="/objects/messi_5.html" style="border:none;" width="90%" height="600"></iframe>
+
+
+
+
+
+**Notes/Technical Details:**
+
+
+
+
+
+  1. This analysis has been done using **Python** and [JupiterLab](https://jupyterlab.readthedocs.io/en/stable/). You can find the notebook file [here](https://github.com/carlosyanez/Messi_Stats).
+  2. All stats have been sourced from **Wikipedia**, using [Beatiful Soup](https://www.crummy.com/software/BeautifulSoup/). All links are cointained in the notebook's code.
+  3. All charts have been created by [plotly](https://plotly.com/python/plotly-express/).
+  4. I'm not a football expert, but I acknowledge the game is more than numbers. I'm claiming that Messi is the best player ever...
+
+
+
+
+

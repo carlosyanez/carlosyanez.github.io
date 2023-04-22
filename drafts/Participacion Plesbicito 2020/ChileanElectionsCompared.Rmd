@@ -1,0 +1,203 @@
+---
+date: 2021-05-11 08:05:51+00:00
+draft: false
+title: Comparación de participación entre elecciones 2017 y 2020
+type: post
+url: /2021/05/comparacion-de-participacion-entre-elecciones-2017-y-2020/
+categories:
+- Data Analysis
+tags:
+- chile
+- crosstalk
+- participacion
+- r
+---
+```{r setup, echo = FALSE,warning=FALSE,message=FALSE}
+
+options(digits=2)
+options(knitr.table.format = "html") 
+knitr::opts_chunk$set(echo = FALSE,
+                      warning=FALSE,
+                      message=FALSE,
+                      dev = 'svg')
+if(!require(librarian)) install.packages("librarian")
+
+librarian::shelf("tidyverse","plotly",
+                 "colRoz",
+                 "paletteer",
+                 "crosstalk",
+                 "DT",
+                 "ggtext",
+                 "htmltools", 
+                 "ggrepel",
+                 "carlosyanez/customthemes", #custom plot themes
+                 "here")                              
+
+theme_set(custom_plot_theme())
+
+widget_url <- here()
+```
+
+```{r load}
+if(file.exists("source.RData")){
+  load("source.RData")
+}else{
+  source("data_load.R")
+  save.image("source.RData")
+}
+```
+
+
+Interactive version [here](/objects/participacion_chile.html).
+
+```{r prep_data}
+partidos_comuna <- resultados2017_analisis$partidos %>% 
+            left_join(partidos,by="Partido") %>% mutate(Partido=Partido_Corrected,Votos_Partido=Votos) %>%
+            select(-Partido_Corrected,-Posicion_Plebiscito,-Votos) %>%
+            group_by(Comuna) %>% arrange(desc(Votos_Partido)) %>%
+            mutate(preference=row_number(),
+                   Per_Partido=Votos_Partido/sum(Votos_Partido))%>% 
+            ungroup() %>% filter(preference<=4)
+
+plot_data1 <- plebiscito2020 %>% 
+  select(Comuna,Comuna_Servel,Region,cod_comuna,codregion,Participacion_per,Apruebo_per,Electores) %>%
+  left_join(resultados2017_analisis$participacion %>% select(Comuna_Servel=Comuna,participacion_2017),
+            by="Comuna_Servel") %>%
+  left_join(partidos_comuna %>% filter(preference==1)%>% select(-Votos_Partido), by=c("Comuna_Servel"="Comuna")) %>%
+  mutate(delta=(Participacion_per-participacion_2017)>0,
+         Partido=factor(Partido,levels=(partidos_comuna %>% 
+                                          count(Partido) %>%
+                                          arrange(desc(n)) %>%
+                                          pull(Partido))),
+         `Rango Apruebo`=cut(Apruebo_per,c(0,50,60,80,100),labels=c("<50%","50%-60%","60-80%","80%-100%"))) %>%
+  filter(!(Partido=="NA")) %>%
+  mutate(`Participación 2017`=round(participacion_2017*100,2),
+         `Participación 2020`=round(Participacion_per*100,2),
+         `Porcentaje Apruebo`=round(Apruebo_per,2)
+        ) %>%
+  select(Comuna,CodRegion=codregion,Region,Electores,
+         `Participación 2020`,`Participación 2017`,`Porcentaje Apruebo`,`Rango Apruebo`) %>%
+  arrange(CodRegion,Comuna)
+
+
+```
+
+
+```{r basic plot}
+
+
+          
+p_data <- SharedData$new(plot_data1,key=~Comuna)
+
+
+p1 <- ggplot(data=p_data) +
+      geom_vline(xintercept = 50,linetype = "dashed",color = "cadetblue2", size = 0.5) +
+      geom_hline(yintercept = 50,linetype = "dashed",color = "cadetblue2", size = 0.5) +
+      geom_abline(slope=1,intercept = 0,
+                  linetype = "dashed",colour = "tomato3", size = 0.5)+
+      geom_point(aes(x=`Participación 2017`,y=`Participación 2020`,size=Electores,
+              colour=`Rango Apruebo`),alpha=0.5) +
+      scale_color_paletteer_d("colRoz::c_decresii",name="Porc. Apruebo") +
+      scale_size_area(name="Electores 2020",breaks=c(50,100,200,300)*10^3, labels=str_c(c(50,100,200,300)," mil"))+
+      xlim(10,70)+
+      ylim(10,70) +
+      labs(x="Participación Diputados 2017",
+           y="Participación Plebiscito 2020") +
+      theme(legend.position = "none")
+      
+
+p1 + labs(caption="Fuente: servel")
+  
+```
+
+
+```{r chart_a_create}
+  
+    
+pl <- ggplotly(p1) %>%
+      config(displayModeBar = FALSE) %>%
+      highlight(on = "plotly_selected",
+            off = "plotly_doubleclick")
+
+dtl <- p_data  %>% datatable(extensions="Scroller", style="bootstrap", 
+                            class="compact", width="100%",
+                             options=list(dom = 't',
+                                         deferRender=TRUE, 
+                                          scrollY=300, 
+                                          scroller=TRUE,
+                                          columnDefs = list(list(visible=FALSE, 
+                                                                 autowidth=TRUE,
+                                                                  targets=c(2,8)))
+                                          )) 
+
+
+chart_a <- list(
+bscols(
+filter_slider("Apruebo_per", "Porcentaje Apruebo", p_data, ~`Porcentaje Apruebo`, width = "60%",step=1,round=TRUE),
+    filter_select("region", "Región", p_data, ~Region, ~unique(Region))
+),
+pl,
+dtl,
+"Fuente: Servel")
+
+
+
+ save_html(chart_a, 
+            file= here("static","objects","participacion_chile.html"),
+            libdir = here("static","rmarkdown-libs")
+)
+
+
+```
+
+
+
+```{r create_static_plot, eval=FALSE}
+
+plot_caption <- plot_caption <-str_c(str_c('**Fuente:** servel.cl'),
+                     '<br>',
+                     add_social_ref("@carlosyanez"))
+
+my_arrow <- arrow(angle = 30, length = unit(0.09, "inches"),
+                  ends = "first", type = "open")
+
+selected_areas <- c("Vitacura","Las Condes","Maipú","Valparaíso","Concepción","La Pintana",
+                    "Curacautín","Punta Arenas","Arica","Chonchi")
+
+p <- p1 + custom_plot_theme_md(background_colour = "snow1",plot_margin = c(3,3,3,3),
+                               title_size = 28,
+                               subtitle_size = 24,
+                               caption_size = 20,
+                               axis_size = 20,
+                               legend_size = 12) +
+          theme(legend.position = "right", legend.direction = "vertical",
+                plot.caption=element_markdown(hjust = 0)) +
+          labs(title = "Partipación en 2017 y 2020",
+               subtitle="Comparación entre diputados 2017 y plebiscito 2020",
+               caption=plot_caption) +
+          geom_text_repel(data=plot_data1%>% filter(Comuna %in% selected_areas) ,
+                          aes(x=`Participación 2017`,y=`Participación 2020`,label=Comuna),
+                          inherit.aes = FALSE,
+                               size=6,
+                               force=100,
+                               direction ="both",
+                               nudge_x=-0.1,
+                               point.padding = 0.1,
+                               box.padding = 0.5,
+                               arrow=my_arrow,
+                               segment.curvature = -0.2,
+                               segment.ncp = 1,
+                               segment.angle = 60) +
+          geom_point(data = plot_data1%>% filter(Comuna %in% selected_areas) ,
+                     aes(x=`Participación 2017`,y=`Participación 2020`,label=Comuna),
+                     alpha=0,colour="red"
+                     )
+
+p
+
+##save on file
+#wv <- 12
+#save_image(p,here("comparacion_participacion.png"),width=wv,height=wv*1.1) 
+```
+
+
