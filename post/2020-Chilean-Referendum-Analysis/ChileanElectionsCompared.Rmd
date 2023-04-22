@@ -1,6 +1,22 @@
 ---
-title: "Plescibito 2020"
-output: html_notebook
+title: "Chilean Elections Compared"
+date: 2021-05-11 09:43:17+00:00
+type: post
+url: /posts/2020/08/gaps-within-countries-mapping-subnational-hdi/
+featured_image: /images/feature_img.jpg
+categories:
+- Data Analysis
+language:
+- English
+tags:
+- australia
+- chile
+- hdi
+- leaflet
+- plotly
+- r
+output:
+  md_document
 ---
 ```{r setup, echo = FALSE,warning=FALSE,message=FALSE}
 

@@ -1,31 +1,25 @@
 ---
-title: "Gaps within countries - Mapping Subnational HDI"
-date: 2020-08-25 09:43:17+00:00
-draft: false
-type: post
-url: /2020/08/gaps-within-countries-mapping-subnational-hdi/
-categories:
-- Data Analysis
-language:
-- English
-tags:
-- australia
-- chile
-- hdi
-- leaflet
-- plotly
-- r
+title: "Mapping Subnational HDIs"
+output:
+  html_document:
+    highlight: tango
+    keep_md: yes
+    theme: yeti
 ---
 
 ```{r include=FALSE}
 
-
+render_maps <- FALSE
+image_address <- "https://www.carlosyanez.cl/wp-content/uploads/2020/08/"
+#image_address <-"./"
+map_address <- "https://www.carlosyanez.cl/wp-content/uploads/2020/08/"
+#map_address <-"./"
 
 library(broom)
 library(tidyverse)
-#library(spdplyr)
+library(spdplyr)
 library(leaflet)
-#library(leafgl)
+library(leafgl)
 library(leaflet.providers)
 library(rmapshaper)
 library(widgetframe)
@@ -33,15 +27,8 @@ library(plotly)
 library(ggplot2)
 library(crosstalk)
 library(here)
-library(sf)
 
 knitr::opts_chunk$set(echo = FALSE,warning=FALSE,message=FALSE)
-
-render_maps <- FALSE
-image_address <- "images/"
-#image_address <-"./"
-map_address <- "objects/"
-#map_address <-"./"
 
 #shdi	Indices	Pos	3	A	Sub-national HDI
 #healthindex	Indices	Pos	3	A	Health index
@@ -147,7 +134,7 @@ if(!file.exists("national_hdi.html")){
                                title="National HDI"
                               )
 
-webshot::webshot(str_c(io_repo,'national_hdi.html'), file =  here("static","images",'national_hdi.png'),
+webshot::webshot(str_c(io_repo,'national_hdi.html'), file = 'national_hdi.png',
         cliprect = "viewport")
 }
 map1
@@ -156,7 +143,8 @@ rm(map1,data)
 
 ```
 
-<a href="/objects/national_hdi.html"><img src="/images/national_hdi.png" alt="National HDIs"  class="center" style="width:80%;"/></a>
+<a href="`r paste(map_address,"national_hdi.html",sep="")`"><img src="`r paste(image_address,"national_hdi.png",sep="")`" alt="drawing"  class="center" style="width:80%;"/></a>
+
 
 Probably, this map conforms with a *traditional* view of the world: on one side we have *highly developed*, *industrialised* economies.  African countries are situated on the other extreme of development, with Latin American and Asian countries covering the range in the middle.
 
@@ -193,15 +181,15 @@ if(!file.exists("subnational_hdi.html")){
                                title="Subnational HDI"
                               )
 
-webshot::webshot(str_c(io_repo,'subnational_hdi.html'), file = here("static","images",'subnational_hdi.png'),
+webshot::webshot(str_c(io_repo,'subnational_hdi.html'), file = 'subnational_hdi.png',
         cliprect = "viewport")
 }
-#map1
+map1
 rm(map1,data)
 }
 ```
 
-<a href="/objects/subnational_hdi.html"><img src="/images/subnational_hdi.png" alt="Map with subnational  HDIs"  class="center" style="width:80%;"/></a>
+<a href="`r paste(map_address,"subnational_hdi.html",sep="")`"><img src="`r paste(image_address,"subnational_hdi.png",sep="")`" alt="drawing"  class="center" style="width:80%;"/></a>
 
 
 If you explore the map, it is possible to see a more nuanced version how development is generally no equal in each country. Even though almost all of the *traditionally developed* countries manage distribute this development more o less evenly across their territories. The only exception to this is **France**, with French Guiana (technically equal to the European departments) being less developed than the rest of the country. In the other countries, we can observe that:
@@ -283,15 +271,15 @@ fig <- fig %>% layout(
     )
 )
 
-frameableWidget(fig)
-#htmlwidgets::saveWidget(frameableWidget(fig),'subnational_hdi_sankey.html')
+
+htmlwidgets::saveWidget(frameableWidget(fig),'subnational_hdi_sankey.html')
 
 
-#rm(fig,node_label,node_colour,source_values,target_values,size_values,label_values,colour_values)
+rm(fig,node_label,node_colour,source_values,target_values,size_values,label_values,colour_values)
 ```
 
 
- <!-- <iframe src="`r paste(map_address,"subnational_hdi_sankey.html",sep="")`" height="600" width="90%" style="border:none;" ></iframe>  -->
+ <iframe src="`r paste(map_address,"subnational_hdi_sankey.html",sep="")`" height="600" width="90%" style="border:none;" ></iframe> 
 
 
 Generally speaking, the above sounds like good news. If countries already have areas *punching above* their respective national indicators, is this a sign of good things to come for the rest of the country? If income keeps growing, will in mean that eventually all regions of a country will even out, as shown by the already developed economies?  To try to see that, let's have a look at the relation between the regional HDI gap (the difference between the highest and lowest HDIs in a country) and their national HDIs. This is presented in the below chart:
@@ -349,13 +337,12 @@ p<- hdi_gap %>%
 
 p<-ggplotly(p, tooltip = c("text")) %>% layout(legend=list(title=list(text='<b> Region </b>')))
 
-frameableWidget(p)
-#htmlwidgets::saveWidget(frameableWidget(p),'regional_hdi_comparison_1.html')
+htmlwidgets::saveWidget(frameableWidget(p),'regional_hdi_comparison_1.html')
 
 
 ```
 
- <!-- <iframe src="`r paste(map_address,"regional_hdi_comparison_1.html",sep="")`" height="600" width="90%" style="border:none;" ></iframe>  -->
+ <iframe src="`r paste(map_address,"regional_hdi_comparison_1.html",sep="")`" height="600" width="90%" style="border:none;" ></iframe> 
 
 
 From this chart, it is possible to observe a very week correlation, where a higher HDI seems to come with lower regional gap. However, when we observe how this evolves over time for each country, we have a different picture, as shown by the animated chart below (please press play):
@@ -407,12 +394,12 @@ p<- hdi_gap_historic %>% ggplot()  +
 
 p<- ggplotly(p, tooltip = c("text")) %>% layout(legend=list(title=list(text='<b> Country </b>')))
 
-#htmlwidgets::saveWidget(frameableWidget(p),'regional_hdi_comparison_time.html')
-frameableWidget(p)
+htmlwidgets::saveWidget(frameableWidget(p),'regional_hdi_comparison_time.html')
+
 
 ```
 
- <!-- <iframe src="`r paste(map_address,"regional_hdi_comparison_time.html",sep="")`" height="600" width="90%" style="border:none;" ></iframe>  -->
+ <iframe src="`r paste(map_address,"regional_hdi_comparison_time.html",sep="")`" height="600" width="90%" style="border:none;" ></iframe> 
 
 
 In those (arbitrarily) selected countries we actually have the whole range: for instance, in **India** progress in HDI brings a smaller gap; in **Lybia** and **Australia** response is rather flat; and in **Chile** and **Malaysia** national HDI improvements don't have the same rate nationwide.
