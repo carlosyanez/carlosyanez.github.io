@@ -173,5 +173,9 @@
     <loc>https://www.carlosyanez.id.au/packages/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.carlosyanez.id.au/projects_embed/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

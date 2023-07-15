@@ -2,11 +2,12 @@
 featured_image: /images/feature_img.jpg
 description:
 title: 'Projects'
+output: md_document
 ---
 
 Direct link [here](/projects/),
 
-```{r}
-xaringanExtra::embed_xaringan("/projects/")
+```{r echo=FALSE}
+xaringanExtra::embed_xaringan("http:://carlosyanez.github.io/projects/")
 ```
 
