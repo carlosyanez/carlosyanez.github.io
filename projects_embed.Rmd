@@ -1,0 +1,12 @@
+---
+featured_image: /images/feature_img.jpg
+description:
+title: 'Projects'
+---
+
+Direct link [here](/projects/),
+
+```{r}
+xaringanExtra::embed_xaringan("/projects/")
+```
+
