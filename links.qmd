@@ -1,0 +1,11 @@
+---
+title: "Links"
+backgroundcolor: "#F5F5F5"
+---
+
+
+Here are some recommended links.
+
+* [Lauren's website](https://www.laurenbaird.com)
+
+* [My Masters Project: Analysing Australian Elections](https://carlosyanez.id.au/MSc_DA_Project/)

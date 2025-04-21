@@ -1,0 +1,12 @@
+---
+date: 2021-04-30 09:33:49+00:00
+title: What to watch on Netflix ?
+type: post
+image: /images/netflix.png
+---
+
+View full screen [here](netflix_categories.html).
+
+<iframe src="netflix_categories.html" style="border:none;" width="80%" height="1000px">
+
+</iframe>

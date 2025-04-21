@@ -1,0 +1,44 @@
+{
+  "index.qmd": {
+    "index.html": "f937f505"
+  },
+  "about.qmd": {
+    "about.html": "0aa691c7"
+  },
+  "packages.qmd": {
+    "packages.html": "ca276631"
+  },
+  "projects.qmd": {
+    "projects.html": "4e65d4cf"
+  },
+  "links.qmd": {
+    "links.html": "06fe4aa2"
+  },
+  "blog.qmd": {
+    "blog.html": "74f6e8aa"
+  },
+  "posts/2022-05-18-on-data-governance/index.qmd": {
+    "index.html": "f89afcaa"
+  },
+  "posts/2022-05-16-big-data-analytics-and-personal-data/index.qmd": {
+    "index.html": "2c46a17a"
+  },
+  "posts/2021-04-30-what-to-watch-on-netflix/index.qmd": {
+    "index.html": "3a1a85a9"
+  },
+  "posts/2020-11-24-bicycle-spaces-in-melbourne/index.qmd": {
+    "index.html": "11779af7"
+  },
+  "posts/2020-11-17-messi/index.qmd": {
+    "index.html": "d66b5d3e"
+  },
+  "posts/2020-06-30-locked-down-areas-in-melbourne/index.qmd": {
+    "index.html": "123c206d"
+  },
+  "posts/2019-12-13-desigualdad-en-chile/index.qmd": {
+    "index.html": "687fb3c8"
+  },
+  "posts/2019-12-12-inequality-in-chile/index.qmd": {
+    "index.html": "bdca847d"
+  }
+}

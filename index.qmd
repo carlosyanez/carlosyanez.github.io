@@ -1,0 +1,27 @@
+---
+format:
+  html:
+    linkcolor: "#ffffff"
+    classes: no-footer
+---
+<style>
+  body {
+  background-image: url("images/home_bkg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+  
+</style>
+<div class="container-1">
+  <div class="text-homepage" id="name"> Welcome</div>
+</div>
+<p>
+<div class="container-2">
+  <div class="icons-homepage"> [{{< iconify fa6-brands:linkedin>}}](https://www.linkedin.com/in/carlosyanez/) [{{< iconify fa6-brands:github>}}](https://github.com/carlosyanez) [{{< iconify fa6-brands:bluesky>}}](https://bsky.app/profile/carlosyanez.id.au) [{{< iconify fa6-brands:mastodon>}}](https://fosstodon.org/@carlosyanez)</div>
+</div>
+
+<style>
+.nav-footer {
+    display: none;
+}
+</style>

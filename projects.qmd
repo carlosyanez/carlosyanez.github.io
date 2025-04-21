@@ -1,0 +1,5 @@
+---
+title: "Projects"
+backgroundcolor: "#F5F5F5"
+---
+{{< revealjs "https://carlosyanez.id.au/projects" >}}

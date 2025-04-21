@@ -1,0 +1,12 @@
+---
+date: 2019-12-13 11:55:32+00:00
+title: Desigualdad en Chile
+type: post
+image: /images/chiles_inequality.png
+---
+
+**tldr:** Sí, los ingresos se distribuyen de manera desigual en Chile. Esto es especialmente cierto en comparación con **naciones desarrolladas**, pero no es extraordinario en el contexto latinoamericano. Observado por decil de ingresos, existe una brecha aguda entre los grupos más pobres y más ricos. Sin embargo, debemos reconocer que tanto la desigualdad como el ingreso han mejorado en los últimos 25 años en todos los grupos de la sociedad: Chile es una historia de éxito. Sin perjuico de los anterior, hoy existen margen y recursos para abordar las diferencias más agudas: el desafío a largo plazo es cómo crecer de manera que la riqueza esté mejor distribuida.
+
+<iframe src="Chiles_Inequality_es.html" height="7000" width="100%" style="border:none;">
+
+</iframe>

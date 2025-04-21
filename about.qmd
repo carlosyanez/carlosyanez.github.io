@@ -1,0 +1,22 @@
+---
+title: "About me"
+about:
+  template: solana
+  image: /images/profile.jpg
+  links:
+     - text: '{{< iconify fa6-brands:linkedin>}}'
+       href: https://www.linkedin.com/in/carlosyanez/
+     - text: '{{< iconify fa6-brands:github>}}'
+       href: https://github.com/carlosyanez
+     - text: '{{< iconify fa6-brands:bluesky>}}'
+       href: https://bsky.app/profile/carlosyanez.id.au
+     - text: '{{< iconify fa6-brands:mastodon>}}'
+       href: https://fosstodon.org/@carlosyanez
+backgroundcolor: "#F5F5F5"
+---
+
+
+Husband and father of one, living in Melbourne/Naarm.
+
+After a career in IT, I’m trying to interpret and make sense of the world through data. Electronics Engineer from 
+[UTFSM](https://usm.cl/en/home/),  MSc in Data Analytics from the [University of Glasgow](https://www.gla.ac.uk/).

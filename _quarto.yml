@@ -1,0 +1,50 @@
+project:
+  type: website
+
+website:
+  title: "Carlos Yáñez Santibáñez"
+  google-analytics: "G-V0FR1QV26R"
+  open-graph: true
+  page-navigation: true
+  cookie-consent:
+    type: express
+    style: interstitial
+    palette: light
+  page-footer:
+    border: false
+    background: "#F5F5F5"
+    foreground: "#000000"
+    right: 
+      - text: '{{< iconify fa6-brands:linkedin>}}'
+        href: https://www.linkedin.com/in/carlosyanez/
+      - text: '{{< iconify fa6-brands:github>}}'
+        href: https://github.com/carlosyanez
+      - text: '{{< iconify fa6-brands:bluesky>}}'
+        href: https://bsky.app/profile/carlosyanez.id.au
+      - text: '{{< iconify fa6-brands:mastodon>}}'
+        href: https://fosstodon.org/@carlosyanez
+  navbar:
+    search: false
+    background: "#000000"
+    foreground: "#FFFFFF"
+    right:
+      - href: about.qmd
+        text: About
+      - href: packages.qmd
+        text: Packages
+      - href: projects.qmd
+        text: Projects
+      - href: links.qmd
+        text: Links
+      - href: blog.qmd
+        text: Blog
+format:
+  html:
+    date-format: 'dd Do MMM, YYYY'
+    theme:
+      - cosmo
+    css: styles.css
+    toc: false
+
+editor: visual
+
