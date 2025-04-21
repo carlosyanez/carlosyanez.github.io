@@ -15,8 +15,8 @@ about:
 backgroundcolor: "#F5F5F5"
 ---
 
-
 Husband and father of one, living in Melbourne/Naarm.
 
-After a career in IT, I’m trying to interpret and make sense of the world through data. Electronics Engineer from 
-[UTFSM](https://usm.cl/en/home/),  MSc in Data Analytics from the [University of Glasgow](https://www.gla.ac.uk/).
+After a career in IT, I’m trying to interpret and make sense of the world through data. Electronics Engineer from [UTFSM](https://usm.cl/en/home/), MSc in Data Analytics from the [University of Glasgow](https://www.gla.ac.uk/).
+
+Any opinions on this site reflect my own views only.
