@@ -1,5 +1,4 @@
 execute:
   freeze: auto  # re-render only when source changes
 website:
-  reader-mode: true
   backgroundcolor: "#F5F5F5"
