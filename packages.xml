@@ -6,48 +6,56 @@
       version="2.0">
 <channel>
 <title>Carlos Yáñez Santibáñez</title>
-<link>https://carlosyanez.github.io/packages.html</link>
-<atom:link href="https://carlosyanez.github.io/packages.xml" rel="self" type="application/rss+xml"/>
+<link>https://carlosyanez.id.au/packages.html</link>
+<atom:link href="https://carlosyanez.id.au/packages.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.6.43</generator>
 <lastBuildDate>Wed, 19 Jul 2023 00:00:00 GMT</lastBuildDate>
 <item>
   <title>{auscensus}</title>
-  <link>https://carlosyanez.github.io/</link>
+  <link>https://carlosyanez.id.au/</link>
   <description></description>
-  <guid>https://carlosyanez.github.io/</guid>
+  <guid>https://carlosyanez.id.au/</guid>
   <pubDate>Wed, 19 Jul 2023 00:00:00 GMT</pubDate>
   <media:content url="https://raw.githubusercontent.com/carlosyanez/auscensus/ced67a815421900b96fcd39eace0289f749dd378/img/bbox_ghcard.png" medium="image" type="image/png"/>
 </item>
 <item>
   <title>{aussiemaps}</title>
-  <link>https://carlosyanez.github.io/</link>
+  <link>https://carlosyanez.id.au/</link>
   <description></description>
-  <guid>https://carlosyanez.github.io/</guid>
+  <guid>https://carlosyanez.id.au/</guid>
   <pubDate>Wed, 19 Jul 2023 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/carlosyanez/aussiemaps/blob/master/img/bbox_ghcard.png?raw=true" medium="image"/>
 </item>
 <item>
-  <title>{uofgdataanalyticsreport}</title>
-  <link>https://carlosyanez.github.io/</link>
+  <title>{auspol}</title>
+  <link>https://carlosyanez.id.au/</link>
   <description></description>
-  <guid>https://carlosyanez.github.io/</guid>
+  <guid>https://carlosyanez.id.au/</guid>
+  <pubDate>Wed, 19 Jul 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://github.com/carlosyanez/auspol/blob/master/img/bbox_ghcard.png?raw=true" medium="image"/>
+</item>
+<item>
+  <title>{uofgdataanalyticsreport}</title>
+  <link>https://carlosyanez.id.au/</link>
+  <description></description>
+  <guid>https://carlosyanez.id.au/</guid>
   <pubDate>Wed, 19 Jul 2023 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/carlosyanez/uofgdataanalyticsreport/blob/main/img/bbox_ghcard.png?raw=true" medium="image"/>
 </item>
 <item>
   <title>{just.install}</title>
-  <link>https://carlosyanez.github.io/</link>
+  <link>https://carlosyanez.id.au/</link>
   <description></description>
-  <guid>https://carlosyanez.github.io/</guid>
+  <guid>https://carlosyanez.id.au/</guid>
   <pubDate>Wed, 19 Jul 2023 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/carlosyanez/just.install/blob/main/img/bbox_ghcard.png?raw=true" medium="image"/>
 </item>
 <item>
   <title>{customthemes}</title>
-  <link>https://carlosyanez.github.io/</link>
+  <link>https://carlosyanez.id.au/</link>
   <description></description>
-  <guid>https://carlosyanez.github.io/</guid>
+  <guid>https://carlosyanez.id.au/</guid>
   <pubDate>Wed, 19 Jul 2023 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/carlosyanez/customthemes/blob/main/img/bbox_ghcard.png?raw=true" medium="image"/>
 </item>
