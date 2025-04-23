@@ -11,6 +11,10 @@ listing:
       title: "{aussiemaps}"
       image: "https://github.com/carlosyanez/aussiemaps/blob/master/img/bbox_ghcard.png?raw=true"
       date: "2023-07-19"
+    - path: https://carlosyanez.github.io/auspol
+      title: "{auspol}"
+      image: "https://github.com/carlosyanez/auspol/blob/master/img/bbox_ghcard.png?raw=true"
+      date: "2023-07-19"
     - path: https://carlosyanez.github.io/uofgdataanalyticsreport
       title: "{uofgdataanalyticsreport}"
       image: "https://github.com/carlosyanez/uofgdataanalyticsreport/blob/main/img/bbox_ghcard.png?raw=true"
@@ -31,4 +35,3 @@ listing:
   feed: true
   fields: [image,  title]
 ---
-
