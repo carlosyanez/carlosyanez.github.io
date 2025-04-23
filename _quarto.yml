@@ -28,6 +28,7 @@ website:
     search: false
     background: "#000000"
     foreground: "#FFFFFF"
+    pinned: true
     right:
       - href: about.qmd
         text: About
