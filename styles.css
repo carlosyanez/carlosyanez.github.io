@@ -1,0 +1,140 @@
+/*@font-face {
+  font-family: "myfont";
+  src: url('gb.ttf') format('truetype'); /* Ensure the path and format are correct */
+}
+
+*/
+
+/* Gradient background animation */
+@keyframes gradientBackground {
+  0% {
+    background: linear-gradient(125deg, #F9CEDC 0%, #fad0c4 100%);
+  }
+  35% {
+    background: linear-gradient(25deg, #E4E4F5 0%, #fbc2eb 100%);
+  }
+  50% {
+    background: linear-gradient(25deg, #fad0c4 0%, #ffd1ff 100%);
+  }
+  75% {
+    background: linear-gradient(25deg, #CEE9F9 0%, #fbc2eb 100%);
+  }
+  100% {
+    background: linear-gradient(65deg, #E8EEC5 0%, #fad0c4 100%);
+  }
+}
+
+/* Apply the gradient animation to the body */
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Georgia, Sans-Serif;
+  justify-content: center;
+  align-items: center;
+  animation: gradientBackground 30s linear infinite;
+}
+
+
+.first {
+  margin-top: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container-1 {
+  position: relative;
+  width: 100%;
+  top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-2 {
+  position: relative;
+  width: 100%;
+  top: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-homepage {
+  font-size: 6vw;
+  font-weight: bold;
+/*  font-family: myfont; */
+  color: white;
+  position: absolute;
+}
+
+
+.icons-homepage {
+  font-size: 4vw;
+  font-weight: bold;
+/*  font-family: myfont; */
+  color: white;
+  position: absolute;
+}
+
+
+.icons-about{
+  font-size: 3vw;
+  font-weight: bold;
+/*  font-family: myfont; */
+  color: black;
+  position: center;
+}
+
+
+/* navbar */.navbar-title {  font-family: Sans-Serif;}
+
+.navbar-dark .navbar-brand {
+  text-align: right;
+}
+
+
+.navbar-nav{
+  margin-right: 50px;
+  margin-left: 50px;
+  
+  /* Adjust the value as needed */
+}
+
+.navbar-nav .nav-item{
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: Georgia, serif;
+  font-size: 20px;
+} 
+
+
+.footer {
+  width: 100%;
+  text-align: ;
+  position: fixed;
+  bottom: 0;
+  font-family: Georgia, serif;
+}
+
+.page-footer-title {
+  font-family: Sans-Serif;
+}/* css styles */
+
+.no-footer .footer,
+.no-footer footer,
+.no-footer #quarto-footer {
+  display: none !important;
+}
+
+

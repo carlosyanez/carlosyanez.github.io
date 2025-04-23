@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/packages.html",
+    "items": []
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/2022-05-18-on-data-governance/index.html",
+      "/posts/2022-05-16-big-data-analytics-and-personal-data/index.html",
+      "/posts/2021-04-30-what-to-watch-on-netflix/index.html",
+      "/posts/2020-11-24-bicycle-spaces-in-melbourne/index.html",
+      "/posts/2020-11-17-messi/index.html",
+      "/posts/2019-12-13-desigualdad-en-chile/index.html",
+      "/posts/2019-12-12-inequality-in-chile/index.html"
+    ]
+  }
+]
