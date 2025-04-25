@@ -5,7 +5,7 @@ listing:
   contents: 
     - path: https://carlosyanez.github.io/auscensus
       title: "{auscensus}"
-      image: "https://raw.githubusercontent.com/carlosyanez/auscensus/ced67a815421900b96fcd39eace0289f749dd378/img/bbox_ghcard.png"
+      image: "https://raw.githubusercontent.com/carlosyanez/auscensus/refs/heads/main/img/bbox_ghcard.png"
       date: "2023-07-19"
     - path: https://carlosyanez.github.io/aussiemaps
       title: "{aussiemaps}"
