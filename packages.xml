@@ -17,7 +17,7 @@
   <description></description>
   <guid>https://carlosyanez.id.au/</guid>
   <pubDate>Wed, 19 Jul 2023 00:00:00 GMT</pubDate>
-  <media:content url="https://raw.githubusercontent.com/carlosyanez/auscensus/ced67a815421900b96fcd39eace0289f749dd378/img/bbox_ghcard.png" medium="image" type="image/png"/>
+  <media:content url="https://raw.githubusercontent.com/carlosyanez/auscensus/refs/heads/main/img/bbox_ghcard.png" medium="image" type="image/png"/>
 </item>
 <item>
   <title>{aussiemaps}</title>
