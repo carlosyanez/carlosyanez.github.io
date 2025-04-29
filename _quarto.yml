@@ -45,7 +45,7 @@ format:
     date-format: 'dd Do MMM, YYYY'
     theme:
       - cosmo
-    css: styles.css
+    css: [styles.css,flipcard.css]
     toc: false
 
 execute:

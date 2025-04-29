@@ -6,32 +6,34 @@ listing:
     - path: https://carlosyanez.github.io/auscensus
       title: "{auscensus}"
       image: "https://raw.githubusercontent.com/carlosyanez/auscensus/refs/heads/main/img/bbox_ghcard.png"
-      date: "2023-07-19"
+      tagline:  "extract and aggregate data from Census datapacks"
     - path: https://carlosyanez.github.io/aussiemaps
       title: "{aussiemaps}"
       image: "https://github.com/carlosyanez/aussiemaps/blob/master/img/bbox_ghcard.png?raw=true"
-      date: "2023-07-19"
+      tagline: "flexible Australian maps"
     - path: https://carlosyanez.github.io/auspol
       title: "{auspol}"
       image: "https://github.com/carlosyanez/auspol/blob/main/img/bbox_ghcard.png?raw=true"
-      date: "2023-07-19"
+      tagline: "federal election results"
     - path: https://carlosyanez.github.io/uofgdataanalyticsreport
       title: "{uofgdataanalyticsreport}"
       image: "https://github.com/carlosyanez/uofgdataanalyticsreport/blob/main/img/bbox_ghcard.png?raw=true"
-      date: "2023-07-19"
+      tagline: "markdown report template"
     - path: https://carlosyanez.github.io/just.install
       title: "{just.install}"
+      tagline: "simple installation utility"
       image: "https://github.com/carlosyanez/just.install/blob/main/img/bbox_ghcard.png?raw=true"
-      date: "2023-07-19"
     - path: http://carlosyanez.github.io/customthemes
       title: "{customthemes}"
+      tagline: "functions for personal use"
       image: "https://github.com/carlosyanez/customthemes/blob/main/img/bbox_ghcard.png?raw=true"
-      date: "2023-07-19"
-  sort: "date desc"
-  type: grid
-  categories: false
-  filter-ui: false
+  template: flipcard.ejs
   sort-ui: false
-  feed: true
-  fields: [image,  title]
+execute:
+  freeze: false
 ---
+
+```{=html}
+<p></p>
+<p></p>
+```

@@ -41,3 +41,8 @@ rsconnect/
 # End of https://www.toptal.com/developers/gitignore/api/r
 docs/
 .quarto/*
+
+/.quarto/*
+
+
+/.quarto/
